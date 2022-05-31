@@ -1,19 +1,13 @@
 import streamlit as st
-import tensorflow as tf
-from tensorflow import keras
 from tensorflow.keras.models import load_model
 import streamlit as st
 import sounddevice as sd
 import soundfile as sf
 import wavio
-import pandas as pd
 import numpy as np
-import os
-import seaborn as sns
 import matplotlib.pyplot as plt
 import librosa
 import librosa.display
-from IPython.display import Audio
 from numpy import zeros, newaxis
 import warnings
 warnings.filterwarnings('ignore')
@@ -85,7 +79,7 @@ if st.button('Play'):
             st.write("Please record sound first")
 
 if st.button('Classify'):
-        with st.spinner("Classifying the chord"):
+        with st.spinner("Classifying"):
             X_mfcc=extract_mfcc('output.wav')
             X = [x for x in X_mfcc]
             X = np.array(X)
