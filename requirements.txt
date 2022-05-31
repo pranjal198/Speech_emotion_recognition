@@ -8,5 +8,5 @@ sounddevice==0.4.4
 SoundFile==0.10.3.post1
 streamlit==1.9.2
 tensorflow==2.8.0
-keras=2.9.0
+keras==2.9.0
 wavio==0.0.4
