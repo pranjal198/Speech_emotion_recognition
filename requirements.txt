@@ -1,5 +1,6 @@
 ipython==8.4.0
 keras==2.6.0
+tensorflow==2.6.1
 librosa==0.9.1
 matplotlib==3.3.2
 numpy==1.19.3
