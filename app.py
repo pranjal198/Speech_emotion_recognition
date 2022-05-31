@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 import streamlit as st
 import sounddevice as sd
 import soundfile as sf
-from scipy.io.wavfile import write
+import wavio
 import pandas as pd
 import numpy as np
 import os
@@ -70,7 +70,8 @@ if st.button('Record'):
 
         myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
         sd.wait()  # Wait until recording is finished
-        write('output.wav', fs, myrecording)  # Save as WAV file
+        wavio.write("output.wav", myrecording, fs, sampwidth=2)
+        # write('output.wav', fs, myrecording)  # Save as WAV file
     
 if st.button('Play'):
     with st.spinner("Playing sound"):
